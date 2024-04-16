@@ -35,12 +35,16 @@
             this.btnProfesion = new System.Windows.Forms.Button();
             this.btnDesempleados = new System.Windows.Forms.Button();
             this.btnInfo = new System.Windows.Forms.Button();
+            this.btnReportes = new System.Windows.Forms.Button();
             this.panelSubGestion = new System.Windows.Forms.Panel();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnGestion = new System.Windows.Forms.Button();
             this.panelFoto = new System.Windows.Forms.Panel();
             this.lblGestion = new System.Windows.Forms.Label();
+            this.pbxIMG = new System.Windows.Forms.PictureBox();
             this.panelControl = new System.Windows.Forms.Panel();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnMinizar = new System.Windows.Forms.Button();
@@ -50,19 +54,15 @@
             this.panelDgvLector = new System.Windows.Forms.Panel();
             this.dgvLector = new System.Windows.Forms.DataGridView();
             this.pbxIMGinicial = new System.Windows.Forms.PictureBox();
-            this.btnReportes = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnGestion = new System.Windows.Forms.Button();
-            this.pbxIMG = new System.Windows.Forms.PictureBox();
             this.panelMenu.SuspendLayout();
             this.panelSubReportes.SuspendLayout();
             this.panelSubGestion.SuspendLayout();
             this.panelFoto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxIMG)).BeginInit();
             this.panelControl.SuspendLayout();
             this.panelDgvLector.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLector)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxIMGinicial)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxIMG)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -157,6 +157,31 @@
             this.btnInfo.MouseEnter += new System.EventHandler(this.btnInfo_MouseEnter);
             this.btnInfo.MouseLeave += new System.EventHandler(this.btnInfo_MouseLeave);
             // 
+            // btnReportes
+            // 
+            this.btnReportes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReportes.FlatAppearance.BorderSize = 0;
+            this.btnReportes.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnReportes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
+            this.btnReportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(77)))), ((int)(((byte)(96)))));
+            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportes.Font = new System.Drawing.Font("Georgia", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(25)))), ((int)(((byte)(27)))));
+            this.btnReportes.Image = ((System.Drawing.Image)(resources.GetObject("btnReportes.Image")));
+            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReportes.Location = new System.Drawing.Point(0, 344);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnReportes.Size = new System.Drawing.Size(195, 70);
+            this.btnReportes.TabIndex = 13;
+            this.btnReportes.Text = "Reportes";
+            this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnReportes.UseVisualStyleBackColor = true;
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
+            this.btnReportes.MouseEnter += new System.EventHandler(this.btnReportes_MouseEnter);
+            this.btnReportes.MouseLeave += new System.EventHandler(this.btnReportes_MouseLeave);
+            // 
             // panelSubGestion
             // 
             this.panelSubGestion.Controls.Add(this.btnEliminar);
@@ -234,6 +259,54 @@
             this.btnAgregar.MouseEnter += new System.EventHandler(this.btnAgregar_MouseEnter);
             this.btnAgregar.MouseLeave += new System.EventHandler(this.btnAgregar_MouseLeave);
             // 
+            // btnSalir
+            // 
+            this.btnSalir.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnSalir.FlatAppearance.BorderSize = 0;
+            this.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
+            this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(77)))), ((int)(((byte)(96)))));
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Font = new System.Drawing.Font("Georgia", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(25)))), ((int)(((byte)(27)))));
+            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
+            this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSalir.Location = new System.Drawing.Point(0, 600);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnSalir.Size = new System.Drawing.Size(195, 70);
+            this.btnSalir.TabIndex = 9;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.btnSalir.MouseEnter += new System.EventHandler(this.btnSalir_MouseEnter);
+            this.btnSalir.MouseLeave += new System.EventHandler(this.btnSalir_MouseLeave);
+            // 
+            // btnGestion
+            // 
+            this.btnGestion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGestion.FlatAppearance.BorderSize = 0;
+            this.btnGestion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
+            this.btnGestion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(77)))), ((int)(((byte)(96)))));
+            this.btnGestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestion.Font = new System.Drawing.Font("Georgia", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(25)))), ((int)(((byte)(27)))));
+            this.btnGestion.Image = ((System.Drawing.Image)(resources.GetObject("btnGestion.Image")));
+            this.btnGestion.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGestion.Location = new System.Drawing.Point(0, 141);
+            this.btnGestion.Name = "btnGestion";
+            this.btnGestion.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnGestion.Size = new System.Drawing.Size(195, 70);
+            this.btnGestion.TabIndex = 1;
+            this.btnGestion.Text = "Gestión";
+            this.btnGestion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGestion.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnGestion.UseVisualStyleBackColor = true;
+            this.btnGestion.Click += new System.EventHandler(this.btnGestion_Click);
+            this.btnGestion.MouseEnter += new System.EventHandler(this.btnGestion_MouseEnter);
+            this.btnGestion.MouseLeave += new System.EventHandler(this.btnGestion_MouseLeave);
+            // 
             // panelFoto
             // 
             this.panelFoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
@@ -258,6 +331,18 @@
             this.lblGestion.TabIndex = 1;
             this.lblGestion.Text = "Gestión de usuarios";
             this.lblGestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pbxIMG
+            // 
+            this.pbxIMG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pbxIMG.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pbxIMG.Image = ((System.Drawing.Image)(resources.GetObject("pbxIMG.Image")));
+            this.pbxIMG.Location = new System.Drawing.Point(0, 0);
+            this.pbxIMG.Name = "pbxIMG";
+            this.pbxIMG.Size = new System.Drawing.Size(195, 64);
+            this.pbxIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxIMG.TabIndex = 0;
+            this.pbxIMG.TabStop = false;
             // 
             // panelControl
             // 
@@ -330,7 +415,7 @@
             // 
             // TimerDGV
             // 
-            this.TimerDGV.Interval = 2000;
+            this.TimerDGV.Interval = 3000;
             this.TimerDGV.Tick += new System.EventHandler(this.TimerDGV_Tick);
             // 
             // panelDgvLector
@@ -368,91 +453,6 @@
             this.pbxIMGinicial.TabIndex = 2;
             this.pbxIMGinicial.TabStop = false;
             // 
-            // btnReportes
-            // 
-            this.btnReportes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReportes.FlatAppearance.BorderSize = 0;
-            this.btnReportes.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnReportes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
-            this.btnReportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(77)))), ((int)(((byte)(96)))));
-            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportes.Font = new System.Drawing.Font("Georgia", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReportes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(25)))), ((int)(((byte)(27)))));
-            this.btnReportes.Image = ((System.Drawing.Image)(resources.GetObject("btnReportes.Image")));
-            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnReportes.Location = new System.Drawing.Point(0, 344);
-            this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnReportes.Size = new System.Drawing.Size(195, 70);
-            this.btnReportes.TabIndex = 13;
-            this.btnReportes.Text = "Reportes";
-            this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnReportes.UseVisualStyleBackColor = true;
-            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
-            this.btnReportes.MouseEnter += new System.EventHandler(this.btnReportes_MouseEnter);
-            this.btnReportes.MouseLeave += new System.EventHandler(this.btnReportes_MouseLeave);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnSalir.FlatAppearance.BorderSize = 0;
-            this.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
-            this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(77)))), ((int)(((byte)(96)))));
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Font = new System.Drawing.Font("Georgia", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(25)))), ((int)(((byte)(27)))));
-            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
-            this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSalir.Location = new System.Drawing.Point(0, 600);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnSalir.Size = new System.Drawing.Size(195, 70);
-            this.btnSalir.TabIndex = 9;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            this.btnSalir.MouseEnter += new System.EventHandler(this.btnSalir_MouseEnter);
-            this.btnSalir.MouseLeave += new System.EventHandler(this.btnSalir_MouseLeave);
-            // 
-            // btnGestion
-            // 
-            this.btnGestion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnGestion.FlatAppearance.BorderSize = 0;
-            this.btnGestion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
-            this.btnGestion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(77)))), ((int)(((byte)(96)))));
-            this.btnGestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGestion.Font = new System.Drawing.Font("Georgia", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(25)))), ((int)(((byte)(27)))));
-            this.btnGestion.Image = ((System.Drawing.Image)(resources.GetObject("btnGestion.Image")));
-            this.btnGestion.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGestion.Location = new System.Drawing.Point(0, 141);
-            this.btnGestion.Name = "btnGestion";
-            this.btnGestion.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnGestion.Size = new System.Drawing.Size(195, 70);
-            this.btnGestion.TabIndex = 1;
-            this.btnGestion.Text = "Gestión";
-            this.btnGestion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGestion.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnGestion.UseVisualStyleBackColor = true;
-            this.btnGestion.Click += new System.EventHandler(this.btnGestion_Click);
-            this.btnGestion.MouseEnter += new System.EventHandler(this.btnGestion_MouseEnter);
-            this.btnGestion.MouseLeave += new System.EventHandler(this.btnGestion_MouseLeave);
-            // 
-            // pbxIMG
-            // 
-            this.pbxIMG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pbxIMG.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pbxIMG.Image = ((System.Drawing.Image)(resources.GetObject("pbxIMG.Image")));
-            this.pbxIMG.Location = new System.Drawing.Point(0, 0);
-            this.pbxIMG.Name = "pbxIMG";
-            this.pbxIMG.Size = new System.Drawing.Size(195, 64);
-            this.pbxIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxIMG.TabIndex = 0;
-            this.pbxIMG.TabStop = false;
-            // 
             // Empresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -476,12 +476,12 @@
             this.panelSubReportes.ResumeLayout(false);
             this.panelSubGestion.ResumeLayout(false);
             this.panelFoto.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxIMG)).EndInit();
             this.panelControl.ResumeLayout(false);
             this.panelControl.PerformLayout();
             this.panelDgvLector.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLector)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxIMGinicial)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxIMG)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

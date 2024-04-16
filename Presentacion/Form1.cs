@@ -186,10 +186,16 @@ namespace Presentacion
         {
             TimerDGV.Start();
         }
+        public void ocultarColumnas()
+        {
+            dgvLector.Columns["Id"].Visible = false;
+            dgvLector.Columns["Descripcion"].Visible = false;
+        }
         private void CargarDataGridView()
         {
             PersonaNegocio persona = new PersonaNegocio();
             dgvLector.DataSource = persona.listar();
+            ocultarColumnas();
         }
 
         private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
