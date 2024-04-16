@@ -59,15 +59,5 @@ namespace Presentacion.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap chart_statistics_report_growth_graph_analysis_icon_230469 {
-            get {
-                object obj = ResourceManager.GetObject("chart_statistics_report_growth_graph_analysis_icon_230469", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

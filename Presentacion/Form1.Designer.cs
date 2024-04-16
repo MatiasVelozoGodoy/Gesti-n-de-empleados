@@ -28,35 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Empresa));
             this.panelMenu = new System.Windows.Forms.Panel();
             this.panelSubReportes = new System.Windows.Forms.Panel();
             this.btnProfesion = new System.Windows.Forms.Button();
             this.btnDesempleados = new System.Windows.Forms.Button();
             this.btnInfo = new System.Windows.Forms.Button();
-            this.btnReportes = new System.Windows.Forms.Button();
             this.panelSubGestion = new System.Windows.Forms.Panel();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnGestion = new System.Windows.Forms.Button();
             this.panelFoto = new System.Windows.Forms.Panel();
             this.lblGestion = new System.Windows.Forms.Label();
-            this.pbxIMG = new System.Windows.Forms.PictureBox();
             this.panelControl = new System.Windows.Forms.Panel();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnMinizar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.lblBienvenido = new System.Windows.Forms.Label();
+            this.TimerDGV = new System.Windows.Forms.Timer(this.components);
+            this.panelDgvLector = new System.Windows.Forms.Panel();
+            this.dgvLector = new System.Windows.Forms.DataGridView();
             this.pbxIMGinicial = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnReportes = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnGestion = new System.Windows.Forms.Button();
+            this.pbxIMG = new System.Windows.Forms.PictureBox();
             this.panelMenu.SuspendLayout();
             this.panelSubReportes.SuspendLayout();
             this.panelSubGestion.SuspendLayout();
             this.panelFoto.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxIMG)).BeginInit();
             this.panelControl.SuspendLayout();
+            this.panelDgvLector.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLector)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxIMGinicial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxIMG)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -151,31 +157,6 @@
             this.btnInfo.MouseEnter += new System.EventHandler(this.btnInfo_MouseEnter);
             this.btnInfo.MouseLeave += new System.EventHandler(this.btnInfo_MouseLeave);
             // 
-            // btnReportes
-            // 
-            this.btnReportes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReportes.FlatAppearance.BorderSize = 0;
-            this.btnReportes.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnReportes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
-            this.btnReportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(77)))), ((int)(((byte)(96)))));
-            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportes.Font = new System.Drawing.Font("Georgia", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReportes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(25)))), ((int)(((byte)(27)))));
-            this.btnReportes.Image = ((System.Drawing.Image)(resources.GetObject("btnReportes.Image")));
-            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnReportes.Location = new System.Drawing.Point(0, 344);
-            this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnReportes.Size = new System.Drawing.Size(195, 70);
-            this.btnReportes.TabIndex = 13;
-            this.btnReportes.Text = "Reportes";
-            this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnReportes.UseVisualStyleBackColor = true;
-            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
-            this.btnReportes.MouseEnter += new System.EventHandler(this.btnReportes_MouseEnter);
-            this.btnReportes.MouseLeave += new System.EventHandler(this.btnReportes_MouseLeave);
-            // 
             // panelSubGestion
             // 
             this.panelSubGestion.Controls.Add(this.btnEliminar);
@@ -253,6 +234,165 @@
             this.btnAgregar.MouseEnter += new System.EventHandler(this.btnAgregar_MouseEnter);
             this.btnAgregar.MouseLeave += new System.EventHandler(this.btnAgregar_MouseLeave);
             // 
+            // panelFoto
+            // 
+            this.panelFoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
+            this.panelFoto.Controls.Add(this.lblGestion);
+            this.panelFoto.Controls.Add(this.pbxIMG);
+            this.panelFoto.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelFoto.Location = new System.Drawing.Point(0, 0);
+            this.panelFoto.Name = "panelFoto";
+            this.panelFoto.Size = new System.Drawing.Size(195, 141);
+            this.panelFoto.TabIndex = 0;
+            // 
+            // lblGestion
+            // 
+            this.lblGestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
+            this.lblGestion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblGestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblGestion.Font = new System.Drawing.Font("Georgia", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(177)))), ((int)(((byte)(176)))));
+            this.lblGestion.Location = new System.Drawing.Point(0, 64);
+            this.lblGestion.Name = "lblGestion";
+            this.lblGestion.Size = new System.Drawing.Size(195, 69);
+            this.lblGestion.TabIndex = 1;
+            this.lblGestion.Text = "Gestión de usuarios";
+            this.lblGestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panelControl
+            // 
+            this.panelControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
+            this.panelControl.Controls.Add(this.txtBuscar);
+            this.panelControl.Controls.Add(this.btnMinizar);
+            this.panelControl.Controls.Add(this.btnCerrar);
+            this.panelControl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl.Location = new System.Drawing.Point(195, 0);
+            this.panelControl.Name = "panelControl";
+            this.panelControl.Size = new System.Drawing.Size(727, 61);
+            this.panelControl.TabIndex = 0;
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(77)))), ((int)(((byte)(96)))));
+            this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(177)))), ((int)(((byte)(176)))));
+            this.txtBuscar.Location = new System.Drawing.Point(42, 17);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(206, 27);
+            this.txtBuscar.TabIndex = 2;
+            this.txtBuscar.Text = "Buscar..";
+            this.txtBuscar.Enter += new System.EventHandler(this.txtBuscar_Enter);
+            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
+            this.txtBuscar.Leave += new System.EventHandler(this.txtBuscar_Leave);
+            // 
+            // btnMinizar
+            // 
+            this.btnMinizar.FlatAppearance.BorderSize = 0;
+            this.btnMinizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMinizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(177)))), ((int)(((byte)(176)))));
+            this.btnMinizar.Location = new System.Drawing.Point(657, 1);
+            this.btnMinizar.Name = "btnMinizar";
+            this.btnMinizar.Size = new System.Drawing.Size(35, 35);
+            this.btnMinizar.TabIndex = 1;
+            this.btnMinizar.Text = "-";
+            this.btnMinizar.UseVisualStyleBackColor = true;
+            this.btnMinizar.Click += new System.EventHandler(this.btnMinizar_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(177)))), ((int)(((byte)(176)))));
+            this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCerrar.Location = new System.Drawing.Point(691, 1);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
+            this.btnCerrar.Size = new System.Drawing.Size(35, 35);
+            this.btnCerrar.TabIndex = 0;
+            this.btnCerrar.Text = "X";
+            this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // lblBienvenido
+            // 
+            this.lblBienvenido.AutoSize = true;
+            this.lblBienvenido.Font = new System.Drawing.Font("Modern No. 20", 47.99999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBienvenido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(177)))), ((int)(((byte)(176)))));
+            this.lblBienvenido.Location = new System.Drawing.Point(370, 414);
+            this.lblBienvenido.Name = "lblBienvenido";
+            this.lblBienvenido.Size = new System.Drawing.Size(351, 65);
+            this.lblBienvenido.TabIndex = 3;
+            this.lblBienvenido.Text = "¡Bienvenido!";
+            // 
+            // TimerDGV
+            // 
+            this.TimerDGV.Interval = 2000;
+            this.TimerDGV.Tick += new System.EventHandler(this.TimerDGV_Tick);
+            // 
+            // panelDgvLector
+            // 
+            this.panelDgvLector.Controls.Add(this.dgvLector);
+            this.panelDgvLector.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDgvLector.Location = new System.Drawing.Point(195, 61);
+            this.panelDgvLector.Name = "panelDgvLector";
+            this.panelDgvLector.Size = new System.Drawing.Size(727, 609);
+            this.panelDgvLector.TabIndex = 4;
+            this.panelDgvLector.Visible = false;
+            // 
+            // dgvLector
+            // 
+            this.dgvLector.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvLector.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(77)))), ((int)(((byte)(96)))));
+            this.dgvLector.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvLector.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLector.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvLector.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvLector.Location = new System.Drawing.Point(0, 0);
+            this.dgvLector.Name = "dgvLector";
+            this.dgvLector.RowHeadersVisible = false;
+            this.dgvLector.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvLector.Size = new System.Drawing.Size(727, 609);
+            this.dgvLector.TabIndex = 0;
+            // 
+            // pbxIMGinicial
+            // 
+            this.pbxIMGinicial.Image = ((System.Drawing.Image)(resources.GetObject("pbxIMGinicial.Image")));
+            this.pbxIMGinicial.Location = new System.Drawing.Point(412, 157);
+            this.pbxIMGinicial.Name = "pbxIMGinicial";
+            this.pbxIMGinicial.Size = new System.Drawing.Size(248, 223);
+            this.pbxIMGinicial.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxIMGinicial.TabIndex = 2;
+            this.pbxIMGinicial.TabStop = false;
+            // 
+            // btnReportes
+            // 
+            this.btnReportes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReportes.FlatAppearance.BorderSize = 0;
+            this.btnReportes.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnReportes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
+            this.btnReportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(77)))), ((int)(((byte)(96)))));
+            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportes.Font = new System.Drawing.Font("Georgia", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(25)))), ((int)(((byte)(27)))));
+            this.btnReportes.Image = ((System.Drawing.Image)(resources.GetObject("btnReportes.Image")));
+            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReportes.Location = new System.Drawing.Point(0, 344);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnReportes.Size = new System.Drawing.Size(195, 70);
+            this.btnReportes.TabIndex = 13;
+            this.btnReportes.Text = "Reportes";
+            this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnReportes.UseVisualStyleBackColor = true;
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
+            this.btnReportes.MouseEnter += new System.EventHandler(this.btnReportes_MouseEnter);
+            this.btnReportes.MouseLeave += new System.EventHandler(this.btnReportes_MouseLeave);
+            // 
             // btnSalir
             // 
             this.btnSalir.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -301,31 +441,6 @@
             this.btnGestion.MouseEnter += new System.EventHandler(this.btnGestion_MouseEnter);
             this.btnGestion.MouseLeave += new System.EventHandler(this.btnGestion_MouseLeave);
             // 
-            // panelFoto
-            // 
-            this.panelFoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
-            this.panelFoto.Controls.Add(this.lblGestion);
-            this.panelFoto.Controls.Add(this.pbxIMG);
-            this.panelFoto.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelFoto.Location = new System.Drawing.Point(0, 0);
-            this.panelFoto.Name = "panelFoto";
-            this.panelFoto.Size = new System.Drawing.Size(195, 141);
-            this.panelFoto.TabIndex = 0;
-            // 
-            // lblGestion
-            // 
-            this.lblGestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
-            this.lblGestion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblGestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblGestion.Font = new System.Drawing.Font("Georgia", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(177)))), ((int)(((byte)(176)))));
-            this.lblGestion.Location = new System.Drawing.Point(0, 64);
-            this.lblGestion.Name = "lblGestion";
-            this.lblGestion.Size = new System.Drawing.Size(195, 69);
-            this.lblGestion.TabIndex = 1;
-            this.lblGestion.Text = "Gestión de usuarios";
-            this.lblGestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // pbxIMG
             // 
             this.pbxIMG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -338,85 +453,6 @@
             this.pbxIMG.TabIndex = 0;
             this.pbxIMG.TabStop = false;
             // 
-            // panelControl
-            // 
-            this.panelControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
-            this.panelControl.Controls.Add(this.txtBuscar);
-            this.panelControl.Controls.Add(this.btnMinizar);
-            this.panelControl.Controls.Add(this.btnCerrar);
-            this.panelControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl.Location = new System.Drawing.Point(195, 0);
-            this.panelControl.Name = "panelControl";
-            this.panelControl.Size = new System.Drawing.Size(727, 61);
-            this.panelControl.TabIndex = 0;
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(77)))), ((int)(((byte)(96)))));
-            this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(177)))), ((int)(((byte)(176)))));
-            this.txtBuscar.Location = new System.Drawing.Point(42, 17);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(206, 27);
-            this.txtBuscar.TabIndex = 2;
-            this.txtBuscar.Text = "Buscar..";
-            this.txtBuscar.Click += new System.EventHandler(this.txtBuscar_Click);
-            this.txtBuscar.Enter += new System.EventHandler(this.txtBuscar_Enter);
-            this.txtBuscar.Leave += new System.EventHandler(this.txtBuscar_Leave);
-            // 
-            // btnMinizar
-            // 
-            this.btnMinizar.FlatAppearance.BorderSize = 0;
-            this.btnMinizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMinizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(177)))), ((int)(((byte)(176)))));
-            this.btnMinizar.Location = new System.Drawing.Point(657, 1);
-            this.btnMinizar.Name = "btnMinizar";
-            this.btnMinizar.Size = new System.Drawing.Size(35, 35);
-            this.btnMinizar.TabIndex = 1;
-            this.btnMinizar.Text = "-";
-            this.btnMinizar.UseVisualStyleBackColor = true;
-            this.btnMinizar.Click += new System.EventHandler(this.btnMinizar_Click);
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.FlatAppearance.BorderSize = 0;
-            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(177)))), ((int)(((byte)(176)))));
-            this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCerrar.Location = new System.Drawing.Point(691, 1);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
-            this.btnCerrar.Size = new System.Drawing.Size(35, 35);
-            this.btnCerrar.TabIndex = 0;
-            this.btnCerrar.Text = "X";
-            this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
-            // pbxIMGinicial
-            // 
-            this.pbxIMGinicial.Image = ((System.Drawing.Image)(resources.GetObject("pbxIMGinicial.Image")));
-            this.pbxIMGinicial.Location = new System.Drawing.Point(412, 157);
-            this.pbxIMGinicial.Name = "pbxIMGinicial";
-            this.pbxIMGinicial.Size = new System.Drawing.Size(248, 223);
-            this.pbxIMGinicial.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxIMGinicial.TabIndex = 2;
-            this.pbxIMGinicial.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Modern No. 20", 47.99999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(177)))), ((int)(((byte)(176)))));
-            this.label1.Location = new System.Drawing.Point(370, 414);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(351, 65);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "¡Bienvenido!";
-            // 
             // Empresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -424,7 +460,8 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(77)))), ((int)(((byte)(96)))));
             this.ClientSize = new System.Drawing.Size(922, 670);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panelDgvLector);
+            this.Controls.Add(this.lblBienvenido);
             this.Controls.Add(this.pbxIMGinicial);
             this.Controls.Add(this.panelControl);
             this.Controls.Add(this.panelMenu);
@@ -434,14 +471,17 @@
             this.Name = "Empresa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion";
+            this.Load += new System.EventHandler(this.Empresa_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelSubReportes.ResumeLayout(false);
             this.panelSubGestion.ResumeLayout(false);
             this.panelFoto.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbxIMG)).EndInit();
             this.panelControl.ResumeLayout(false);
             this.panelControl.PerformLayout();
+            this.panelDgvLector.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLector)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxIMGinicial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxIMG)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -469,7 +509,10 @@
         private System.Windows.Forms.Button btnDesempleados;
         private System.Windows.Forms.Button btnInfo;
         private System.Windows.Forms.PictureBox pbxIMGinicial;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblBienvenido;
+        private System.Windows.Forms.Timer TimerDGV;
+        private System.Windows.Forms.Panel panelDgvLector;
+        private System.Windows.Forms.DataGridView dgvLector;
     }
 }
 

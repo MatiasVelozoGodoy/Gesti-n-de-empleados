@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,15 +8,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using ToolTip = System.Windows.Forms.ToolTip;
 
 namespace Presentacion
 {
     public partial class Empresa : Form
     {
+        ToolTip toolTip = new ToolTip();
         public Empresa()
         {
             InitializeComponent();
             personalizado();
+            toolTip.SetToolTip(txtBuscar, "Presione Enter para buscar");
+
+            txtBuscar.KeyPress += txtBuscar_KeyPress;
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -82,20 +89,20 @@ namespace Presentacion
         {
             this.WindowState= FormWindowState.Minimized;
         }
-
-        private void txtBuscar_Click(object sender, EventArgs e)
-        {
-            txtBuscar.Text = "";
-        }
-
         private void txtBuscar_Leave(object sender, EventArgs e)
         {
-            txtBuscar.Text = "Buscar..";
+            if (string.IsNullOrWhiteSpace(txtBuscar.Text))
+            {
+                txtBuscar.Text = "Buscar..";
+            }
         }
 
         private void txtBuscar_Enter(object sender, EventArgs e)
         {
-            txtBuscar.Text = "";
+            if (txtBuscar.Text == "Buscar..")
+            {
+                txtBuscar.Text = "";
+            }
         }
 
         private void btnAgregar_MouseEnter(object sender, EventArgs e)
@@ -168,6 +175,29 @@ namespace Presentacion
             mostrarSubmenu(panelSubReportes);
         }
 
+        private void TimerDGV_Tick(object sender, EventArgs e)
+        {
+            TimerDGV.Stop();
+            panelDgvLector.Visible = true;
+            CargarDataGridView();
+        }
 
+        private void Empresa_Load(object sender, EventArgs e)
+        {
+            TimerDGV.Start();
+        }
+        private void CargarDataGridView()
+        {
+            PersonaNegocio persona = new PersonaNegocio();
+            dgvLector.DataSource = persona.listar();
+        }
+
+        private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
