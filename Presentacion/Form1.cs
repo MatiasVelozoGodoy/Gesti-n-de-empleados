@@ -1,4 +1,5 @@
 ﻿using Negocio;
+using Dominio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,12 +17,12 @@ namespace Presentacion
     public partial class Empresa : Form
     {
         ToolTip toolTip = new ToolTip();
+        private List<Persona> lista = new List<Persona>();
         public Empresa()
         {
             InitializeComponent();
             personalizado();
-            toolTip.SetToolTip(txtBuscar, "Presione Enter para buscar");
-
+            toolTip.SetToolTip(txtBuscar, "Presione Enter para buscar entre nombres, apellidos y DNI");
             txtBuscar.KeyPress += txtBuscar_KeyPress;
         }
 
@@ -194,7 +195,8 @@ namespace Presentacion
         private void CargarDataGridView()
         {
             PersonaNegocio persona = new PersonaNegocio();
-            dgvLector.DataSource = persona.listar();
+            lista = persona.listar();
+            dgvLector.DataSource = lista;
             ocultarColumnas();
         }
 
@@ -202,6 +204,11 @@ namespace Presentacion
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
+                List<Persona> listaFiltrada;
+                listaFiltrada = lista.FindAll(x => x.Nombres.ToUpper().Contains(txtBuscar.Text.ToUpper()) || x.Apellidos.ToUpper().Contains(txtBuscar.Text.ToUpper()) || x.DNI.ToString().Contains(txtBuscar.Text.ToUpper()));
+                dgvLector.DataSource = null;
+                dgvLector.DataSource = listaFiltrada;
+                ocultarColumnas();
                 e.Handled = true;
             }
         }
