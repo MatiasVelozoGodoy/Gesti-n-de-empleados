@@ -256,6 +256,7 @@
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             this.btnAgregar.MouseEnter += new System.EventHandler(this.btnAgregar_MouseEnter);
             this.btnAgregar.MouseLeave += new System.EventHandler(this.btnAgregar_MouseLeave);
             // 
@@ -415,7 +416,7 @@
             // 
             // TimerDGV
             // 
-            this.TimerDGV.Interval = 3000;
+            this.TimerDGV.Interval = 2000;
             this.TimerDGV.Tick += new System.EventHandler(this.TimerDGV_Tick);
             // 
             // panelDgvLector
@@ -433,12 +434,13 @@
             this.dgvLector.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvLector.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(77)))), ((int)(((byte)(96)))));
             this.dgvLector.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvLector.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLector.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvLector.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvLector.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvLector.Location = new System.Drawing.Point(0, 0);
             this.dgvLector.Name = "dgvLector";
             this.dgvLector.RowHeadersVisible = false;
+            this.dgvLector.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvLector.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLector.Size = new System.Drawing.Size(727, 609);
             this.dgvLector.TabIndex = 0;

@@ -22,10 +22,10 @@ namespace Presentacion
         {
             InitializeComponent();
             personalizado();
-            toolTip.SetToolTip(txtBuscar, "Presione Enter para buscar entre nombres, apellidos y DNI");
+            toolTip.SetToolTip(txtBuscar, "Presione Enter para buscar entre nombres, apellidos o DNI");
             txtBuscar.KeyPress += txtBuscar_KeyPress;
         }
-
+        #region Diseño
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -182,7 +182,7 @@ namespace Presentacion
             panelDgvLector.Visible = true;
             CargarDataGridView();
         }
-
+        #endregion 
         private void Empresa_Load(object sender, EventArgs e)
         {
             TimerDGV.Start();
@@ -211,6 +211,36 @@ namespace Presentacion
                 ocultarColumnas();
                 e.Handled = true;
             }
+        }
+        private Form formularioActivo = null;
+        private void formularioHijo(Form formHijo)
+        {
+            if (formularioActivo != null)
+            {
+                formularioActivo.Close();
+            }
+            formularioActivo = formHijo;
+            formHijo.TopLevel = false;
+            formHijo.FormBorderStyle = FormBorderStyle.None;
+            formHijo.Dock = DockStyle.Fill;
+            panelDgvLector.Controls.Add(formHijo);
+            panelDgvLector.Tag = formHijo;
+            formHijo.BringToFront();
+
+            formHijo.Show();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            foreach (var item in Application.OpenForms)
+            {
+                if (item.GetType() == typeof(Agregar_Modificar))
+                {
+                    MessageBox.Show("No puedes abrir otra instancia hasta terminarla o cerrarla");
+                    return;
+                }
+            }
+            formularioHijo(new Agregar_Modificar());
         }
     }
 }
