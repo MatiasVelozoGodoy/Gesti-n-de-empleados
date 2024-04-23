@@ -46,14 +46,14 @@
             // 
             // txtDNI
             // 
-            this.txtDNI.Location = new System.Drawing.Point(206, 59);
+            this.txtDNI.Location = new System.Drawing.Point(206, 60);
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(269, 20);
             this.txtDNI.TabIndex = 0;
             // 
             // txtApellidos
             // 
-            this.txtApellidos.Location = new System.Drawing.Point(206, 146);
+            this.txtApellidos.Location = new System.Drawing.Point(206, 145);
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(269, 20);
             this.txtApellidos.TabIndex = 1;
@@ -83,7 +83,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(297, 102);
+            this.label1.Location = new System.Drawing.Point(297, 115);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 21);
             this.label1.TabIndex = 5;
@@ -133,7 +133,7 @@
             // 
             this.lblDNI.AutoSize = true;
             this.lblDNI.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDNI.Location = new System.Drawing.Point(316, 15);
+            this.lblDNI.Location = new System.Drawing.Point(316, 30);
             this.lblDNI.Name = "lblDNI";
             this.lblDNI.Size = new System.Drawing.Size(49, 21);
             this.lblDNI.TabIndex = 10;
@@ -155,6 +155,7 @@
             this.btnAceptar.TabIndex = 12;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
