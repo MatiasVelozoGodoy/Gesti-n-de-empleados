@@ -45,5 +45,50 @@ namespace Negocio
                 data.cerrarConexion();
             }
         }
-    }
+
+        public void agregar(Persona nuevo)
+        {
+            try
+            {
+                data.setearConsulta("insert into ARTICULOS(DNI, Apellidos, Nombres, Descripcion, IdProfesion) values (@dni, @apellidos, @nombres, @descripcion, @idProfesion)");
+                data.limpiarParametros();
+                data.setearParametro("@dni", nuevo.DNI);
+                data.setearParametro("@apellidos", nuevo.Apellidos);
+                data.setearParametro("@nombres", nuevo.Nombres);
+                data.setearParametro("@descripcion", nuevo.Descripcion);
+                data.setearParametro("@idProfesion", nuevo.Profesion.Id);
+                data.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                data.cerrarConexion();
+            }
+        }
+        public void modificar(Persona modifica)
+        {
+            try
+            {
+                data.setearConsulta("update ARTICULOS set DNI = @dni, Apellidos = @apellidos, Nombres = @nombres, Descripcion = @desc, IdProfesion= @idProfesion where Id = @id");
+                data.limpiarParametros();
+                data.setearParametro("@dni", modifica.DNI);
+                data.setearParametro("@apellidos", modifica.Apellidos);
+                data.setearParametro("@nombres", modifica.Nombres);
+                data.setearParametro("@desc", modifica.Descripcion);
+                data.setearParametro("@idProfesion", modifica.Profesion.Id);
+                data.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                data.cerrarConexion();
+            }
+        }
+}
 }
