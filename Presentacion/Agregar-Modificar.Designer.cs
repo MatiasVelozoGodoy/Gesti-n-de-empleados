@@ -190,6 +190,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Agregar_Modificar";
             this.Text = "Agregar_Modificar";
+            this.Load += new System.EventHandler(this.Agregar_Modificar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

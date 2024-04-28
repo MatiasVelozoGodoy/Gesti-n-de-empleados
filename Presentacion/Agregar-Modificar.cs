@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Negocio;
 
 namespace Presentacion
 {
@@ -25,6 +26,12 @@ namespace Presentacion
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void Agregar_Modificar_Load(object sender, EventArgs e)
+        {
+            PersonaNegocio persona = new PersonaNegocio();
+
         }
     }
 }
