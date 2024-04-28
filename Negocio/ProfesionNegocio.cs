@@ -10,7 +10,7 @@ namespace Negocio
     public class ProfesionNegocio
     {
         Conexiones data = new Conexiones();
-        List<Profesiones> listar()
+        public List<Profesiones> listar()
         {
             List<Profesiones> lista = new List<Profesiones>();
             try

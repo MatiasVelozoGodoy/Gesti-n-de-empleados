@@ -30,7 +30,8 @@ namespace Presentacion
 
         private void Agregar_Modificar_Load(object sender, EventArgs e)
         {
-            PersonaNegocio persona = new PersonaNegocio();
+            ProfesionNegocio negocio = new ProfesionNegocio();
+            cbxProfesion.DataSource = negocio.li
 
         }
     }
