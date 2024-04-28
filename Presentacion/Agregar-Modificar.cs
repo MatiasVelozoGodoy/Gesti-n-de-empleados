@@ -44,5 +44,6 @@ namespace Presentacion
             ProfesionNegocio negocio = new ProfesionNegocio();
             cbxProfesion.DataSource = negocio.listar();
         }
+        
     }
 }

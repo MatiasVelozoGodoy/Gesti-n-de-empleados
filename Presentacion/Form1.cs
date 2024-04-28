@@ -192,7 +192,7 @@ namespace Presentacion
             dgvLector.Columns["Id"].Visible = false;
             dgvLector.Columns["Descripcion"].Visible = false;
         }
-        private void CargarDataGridView()
+        public void CargarDataGridView()
         {
             PersonaNegocio persona = new PersonaNegocio();
             lista = persona.listar();
@@ -241,6 +241,7 @@ namespace Presentacion
                 }
             }
             formularioHijo(new Agregar_Modificar());
+
             CargarDataGridView();
         }
     }
