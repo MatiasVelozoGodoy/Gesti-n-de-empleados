@@ -15,7 +15,7 @@ namespace Negocio
             List<Profesiones> lista = new List<Profesiones>();
             try
             {
-                data.setearConsulta("Select Id, Descripcion from PROFESION");
+                data.setearConsulta("Select Id, Descripcion from PROFESIONES");
                 data.ejecutarLectura();
                 while (data.Lector.Read())
                 {
