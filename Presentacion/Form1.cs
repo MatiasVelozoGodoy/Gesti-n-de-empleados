@@ -241,6 +241,7 @@ namespace Presentacion
                 }
             }
             formularioHijo(new Agregar_Modificar());
+            CargarDataGridView();
         }
     }
 }

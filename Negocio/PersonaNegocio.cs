@@ -50,11 +50,12 @@ namespace Negocio
         {
             try
             {
-                data.setearConsulta("insert into ARTICULOS(DNI, Apellidos, Nombres, Descripcion, IdProfesion) values (@dni, @apellidos, @nombres, @descripcion, @idProfesion)");
+                data.setearConsulta("insert into PERSONAS(DNI, Apellidos, Nombres, Edad, Descripcion, IdProfesion, Activo) values (@dni, @apellidos, @nombres, @edad, @descripcion, @idProfesion, 1)");
                 data.limpiarParametros();
                 data.setearParametro("@dni", nuevo.DNI);
                 data.setearParametro("@apellidos", nuevo.Apellidos);
                 data.setearParametro("@nombres", nuevo.Nombres);
+                data.setearParametro("@edad", nuevo.Edad);
                 data.setearParametro("@descripcion", nuevo.Descripcion);
                 data.setearParametro("@idProfesion", nuevo.Profesion.Id);
                 data.ejecutarAccion();
@@ -72,11 +73,12 @@ namespace Negocio
         {
             try
             {
-                data.setearConsulta("update ARTICULOS set DNI = @dni, Apellidos = @apellidos, Nombres = @nombres, Descripcion = @desc, IdProfesion= @idProfesion where Id = @id");
+                data.setearConsulta("update PERSONAS set DNI = @dni, Apellidos = @apellidos, Nombres = @nombres, Edad = @edad, Descripcion = @desc, IdProfesion= @idProfesion where Id = @id");
                 data.limpiarParametros();
                 data.setearParametro("@dni", modifica.DNI);
                 data.setearParametro("@apellidos", modifica.Apellidos);
                 data.setearParametro("@nombres", modifica.Nombres);
+                data.setearParametro("@edad", modifica.Edad);
                 data.setearParametro("@desc", modifica.Descripcion);
                 data.setearParametro("@idProfesion", modifica.Profesion.Id);
                 data.ejecutarAccion();
