@@ -240,9 +240,7 @@ namespace Presentacion
                     return;
                 }
             }
-            Agregar_Modificar formAgregarModificar = new Agregar_Modificar(this);
-            formAgregarModificar.Show();
-            //formularioHijo(new Agregar_Modificar());
+            formularioHijo(new Agregar_Modificar());
 
             CargarDataGridView();
         }

@@ -16,12 +16,10 @@ namespace Presentacion
 {
     public partial class Agregar_Modificar : Form
     {
-        private Empresa _formularioPadre;
 
-        public Agregar_Modificar(Empresa formularioPadre)
+        public Agregar_Modificar()
         {
             InitializeComponent();
-            _formularioPadre = formularioPadre;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -41,7 +39,6 @@ namespace Presentacion
             persona.Profesion = (Profesiones)cbxProfesion.SelectedItem;
             negocio.agregar(persona);
             MessageBox.Show("Agregado exitosamente");
-            _formularioPadre.CargarDataGridView();
 
             Close();
         }
