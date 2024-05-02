@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,14 +10,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dominio;
 using Negocio;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Presentacion
 {
     public partial class Agregar_Modificar : Form
     {
-        public Agregar_Modificar()
+        private Empresa _formularioPadre;
+
+        public Agregar_Modificar(Empresa formularioPadre)
         {
             InitializeComponent();
+            _formularioPadre = formularioPadre;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -36,6 +41,8 @@ namespace Presentacion
             persona.Profesion = (Profesiones)cbxProfesion.SelectedItem;
             negocio.agregar(persona);
             MessageBox.Show("Agregado exitosamente");
+            _formularioPadre.CargarDataGridView();
+
             Close();
         }
 
@@ -44,6 +51,5 @@ namespace Presentacion
             ProfesionNegocio negocio = new ProfesionNegocio();
             cbxProfesion.DataSource = negocio.listar();
         }
-        
     }
 }
