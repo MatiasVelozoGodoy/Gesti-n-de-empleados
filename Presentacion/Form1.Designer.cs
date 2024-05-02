@@ -444,6 +444,7 @@
             this.dgvLector.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLector.Size = new System.Drawing.Size(727, 609);
             this.dgvLector.TabIndex = 0;
+            this.dgvLector.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLector_CellContentClick);
             // 
             // pbxIMGinicial
             // 

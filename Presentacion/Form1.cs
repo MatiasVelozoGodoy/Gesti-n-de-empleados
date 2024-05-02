@@ -244,5 +244,9 @@ namespace Presentacion
 
             CargarDataGridView();
         }
+                private void dgvLector_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
