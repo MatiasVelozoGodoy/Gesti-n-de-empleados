@@ -176,16 +176,16 @@ namespace Presentacion
             mostrarSubmenu(panelSubReportes);
         }
 
-        private void TimerDGV_Tick(object sender, EventArgs e)
-        {
-            TimerDGV.Stop();
-            panelDgvLector.Visible = true;
-            CargarDataGridView();
-        }
+        //private void TimerDGV_Tick(object sender, EventArgs e)
+        //{
+        //    TimerDGV.Stop();
+        //    panelDgvLector.Visible = true;
+        //    CargarDataGridView();
+        //}
         #endregion 
         private void Empresa_Load(object sender, EventArgs e)
         {
-            TimerDGV.Start();
+            //TimerDGV.Start();
         }
         public void ocultarColumnas()
         {
@@ -247,6 +247,15 @@ namespace Presentacion
                 private void dgvLector_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnInfo_Click(object sender, EventArgs e)
+        {
+            panelDgvLector.Visible= false;  
+            PersonaNegocio persona = new PersonaNegocio();
+            lista = persona.listar();
+            dgvLector.DataSource = lista;
+            ocultarColumnas();
         }
     }
 }
