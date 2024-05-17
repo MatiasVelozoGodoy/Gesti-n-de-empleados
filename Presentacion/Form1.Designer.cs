@@ -357,6 +357,7 @@
             this.panelControl.Name = "panelControl";
             this.panelControl.Size = new System.Drawing.Size(727, 61);
             this.panelControl.TabIndex = 0;
+            this.panelControl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelControl_MouseDown);
             // 
             // txtBuscar
             // 

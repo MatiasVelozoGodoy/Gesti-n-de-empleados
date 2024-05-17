@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using ToolTip = System.Windows.Forms.ToolTip;
+using System.Runtime.InteropServices;
 
 namespace Presentacion
 {
@@ -256,6 +257,16 @@ namespace Presentacion
             lista = persona.listar();
             dgvLector.DataSource = lista;
             ocultarColumnas();
+        }
+        [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.dll", EntryPoint = "SendMessage")]
+        private extern static IntPtr SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        private void panelControl_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }
